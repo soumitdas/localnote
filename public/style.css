@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
+
+:root {
+  --font-body: "DM Mono", monospace;
+  --background-color: #17141d;
+  --primary-color: white;
+  --light-dark: #7a7a8c;
+  --grey: #2a2e35;
+  --grey-light: #6c7983;
+  --secondary-color: #ff8a00;
+  --red: hsl(348, 100%, 61%);
+  --green: #09c372;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: var(--font-body);
+}
+
+.header {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.header a {
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.title {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.button {
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 18px;
+  color: inherit;
+  padding: calc(0.5em - 1px) 1em;
+  text-align: center;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, var(--secondary-color), #e52e71);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 1rem 0;
+}
+
+.buttons .button {
+  margin-right: 1rem;
+}
+
+.hero-center {
+  text-align: center;
+}
+
+.is-date {
+  font-size: 14px;
+  color: var(--light-dark);
+}
+
+.card-list {
+  display: flex;
+  padding: 3rem;
+  overflow-x: auto;
+}
+
+.card-list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background: #201c29;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.card-list::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+.card {
+  height: 350px;
+  width: 400px;
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: var(--background-color);
+  box-shadow: -1rem 0 3rem #000;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  margin: 0;
+  scroll-snap-align: start;
+  clear: both;
+  position: relative;
+}
+
+.card .buttons {
+  margin: 0.5rem 0;
+}
+.card .button {
+  font-size: 14px;
+}
+
+.card:focus-within ~ .card,
+.card:hover ~ .card {
+  transform: translateX(130px);
+}
+
+.card:hover {
+  transform: translateY(-1rem);
+}
+
+.card:not(:first-child) {
+  margin-left: -130px;
+}
+
+.card-header {
+  margin-bottom: auto;
+
+  overflow: hidden;
+}
+
+.card-header p {
+  font-size: 14px;
+  margin: 0 0 1rem;
+  color: var(--light-dark);
+}
+
+.card-header h2 {
+  font-size: 20px;
+  margin: 0.25rem 0 auto;
+  text-decoration: none;
+  color: inherit;
+  border: 0;
+  display: inline-block;
+  cursor: pointer;
+
+  /* Truncate header */
+  /* width: 400px; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card-header h2:hover {
+  background: linear-gradient(90deg, var(--secondary-color), #e52e71);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.card-content {
+  margin-top: 1rem;
+}
+
+.card-content p {
+  margin: 0 0 1rem;
+
+  /* Truncate text */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  /* to specify the number of lines you want the text to run through... */
+  -webkit-line-clamp: 5;
+  /* hide the overflowing text, i.e, texts that did not fit in to the box */
+  overflow: hidden;
+}
+
+.tags {
+  margin: 1rem 0 2rem;
+  padding: 0.5rem 0 1rem;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.tags a {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.5rem;
+  color: var(--light-dark);
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  border: 3px solid #28242f;
+  border-radius: 2rem;
+  padding: 0.2rem 0.85rem 0.25rem;
+  position: relative;
+
+  /*diable for now*/
+  pointer-events: none;
+}
+
+.tags a:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.tags a:hover {
+  background: linear-gradient(90deg, var(--secondary-color), #e52e71);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-clip: text;
+  border-color: white;
+}
+
+/*Form*/
+label {
+  font-weight: bold;
+  font-style: italic;
+  margin: 0.5em 0;
+  display: inline-block;
+}
+
+.container {
+  margin: 1rem auto;
+  max-width: 960px;
+  padding: 1rem;
+}
+
+textarea,
+input {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid var(--grey-light);
+  background: var(--grey);
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--primary-color);
+  outline: none;
+  display: block;
+  font-family: var(--font-body);
+}
+
+textarea,
+input:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.create-new {
+  padding: 0.5rem 1rem;
+}
+
+textarea {
+  min-height: 150px;
+  font-weight: 400;
+}
+
+.notification-danger {
+  color: var(--red);
+}
+
+.notification-success {
+  color: var(--green);
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.is-text-centered {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+}
