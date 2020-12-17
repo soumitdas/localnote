@@ -49,6 +49,7 @@ a {
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -282,6 +283,10 @@ textarea {
 
 .is-text-centered {
   text-align: center;
+}
+
+.wrapper {
+  min-height: calc(100vh - 7rem);
 }
 
 .footer {
