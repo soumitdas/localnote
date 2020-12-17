@@ -11,7 +11,7 @@ export const createNote = ({ title, content, tags = "" }) => {
     createdAt: Date.now(),
     updatedAt: Date.now(),
   };
-  console.log(note);
+  //console.log(note);
   localStorage.setItem("__notes", JSON.stringify([...prevNotes, note]));
 };
 

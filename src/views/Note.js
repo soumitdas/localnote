@@ -8,7 +8,7 @@ export default class NoteView extends Component {
     super(props, children);
     if (this.props.router?.params) {
       this.state = { note: getNoteById(this.props.router?.params?.noteId) };
-      console.log(this.props.router?.params?.noteId);
+      //console.log(this.props.router?.params?.noteId);
     } else {
       this.state = { note: null };
     }
