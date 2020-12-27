@@ -28,6 +28,19 @@ export default class Router {
     return this._onLocationChange();
   }
 
+  replace(url, state) {
+    if (url === void 0) {
+      url = "/";
+    }
+    if (state === void 0) {
+      state = {};
+    }
+    if (url !== location.pathname) {
+      history.replaceState(state, document.title, url);
+    }
+    return this._onLocationChange();
+  }
+
   back() {
     history.back();
   }

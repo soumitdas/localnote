@@ -136,7 +136,7 @@ a {
 }
 
 .card-header {
-  margin-bottom: auto;
+  /* margin-bottom: auto; */
 
   overflow: hidden;
 }
@@ -172,6 +172,7 @@ a {
 
 .card-content {
   margin-top: 1rem;
+  margin-bottom: auto;
 }
 
 .card-content p {

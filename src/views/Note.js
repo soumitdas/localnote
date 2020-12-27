@@ -4,8 +4,7 @@ import { dateToMonDDYYYYHHMMAP } from "../helpers/date";
 import { deleteById, getNoteById } from "../helpers/localstorage";
 
 export default class NoteView extends Component {
-  constructor(props, children) {
-    super(props, children);
+  onCreate() {
     if (this.props.router?.params) {
       this.state = { note: getNoteById(this.props.router?.params?.noteId) };
       //console.log(this.props.router?.params?.noteId);

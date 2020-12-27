@@ -5,6 +5,7 @@ export default class Component {
     if (this.children) {
       this.children.onUpdate(() => this.handler());
     }
+    this.onCreate();
   }
 
   setState(value) {
@@ -17,6 +18,8 @@ export default class Component {
   onUpdate(handler) {
     this.handler = handler;
   }
+
+  onCreate() {}
 
   render() {
     return;
